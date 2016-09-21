@@ -22,7 +22,8 @@ Android without having to fix the above issues
 # Usage
 ------------ 
 
-*The below assumes you are working from your home directory*
+*The below assumes you are working from your home directory*   
+
 1. Clone the repo
 ```git@github.com:BuzzBumbleBee/docker_android_build.git```
 2. Navigate to the repo you just cloned
