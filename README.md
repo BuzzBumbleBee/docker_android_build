@@ -24,20 +24,16 @@ Android without having to fix the above issues
 
 *The below assumes you are working from your home directory*
  
-1. Build the docker image (can take some time) 
+1. Build the docker image (can take some time) [Note: you may need to use "sudo" in order to use Docker]
 ``` 
 docker build -t aosp:n ./ 
 ``` 
- 
 2. Make your android src folder on host (this way source and out directory is available within container and on host)
 ``` 
 mkdir aosp
 ``` 
- 
 3. Start docker container (named build with above aosp dir mounted to "/home/build/aosp") 
-
 ``` 
 docker run -it -h aosp-docker --name build -v /home/$USER/aosp:/home/build/aosp aosp:n /bin/bash
 ``` 
- 
 4. cd into aosp directory and run normal AOSP init / sync / build
