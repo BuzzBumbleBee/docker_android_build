@@ -25,13 +25,23 @@ Android without having to fix the above issues
 *The below assumes you are working from your home directory*   
 
 1. Clone the repo
-```git@github.com:BuzzBumbleBee/docker_android_build.git```
+```
+git@github.com:BuzzBumbleBee/docker_android_build.git
+```
 2. Navigate to the repo you just cloned
-```cd docker_android_build``` 
+```
+cd docker_android_build
+``` 
 3. Build the docker image (can take some time) [Note: you may need to use "sudo" in order to use Docker]
-```docker build -t aosp:n ./``` 
+```
+docker build -t aosp:n ./
+``` 
 4. Make your android src folder on host outside of the cloned repo folder (this way source and out directory is available within container and on host)
-```mkdir ../aosp```
+```
+mkdir ../aosp
+```
 5. Start docker container (named build with above aosp dir mounted to "/home/$USER/build/aosp") 
-```docker run -it -h aosp-docker --name build -v /home/$USER/aosp:/home/build/aosp aosp:n /bin/bash```
+```
+docker run -it -h aosp-docker --name build -v /home/$USER/aosp:/home/build/aosp aosp:n /bin/bash
+```
 6. change into the aosp directory and run normal AOSP init / sync / build
